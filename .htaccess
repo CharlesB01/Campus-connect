@@ -1,0 +1,11 @@
+# Empêcher le téléchargement direct de la base de données SQLite
+<FilesMatch "\.sqlite$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+<FilesMatch "^database\.sqlite$">
+    Require all denied
+</FilesMatch>
+
+# Options de sécurité basiques
+Options -Indexes
